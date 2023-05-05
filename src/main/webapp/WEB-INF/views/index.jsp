@@ -25,7 +25,7 @@
         </ul>
     </nav>
     <section class="content">
-        <h2>Zakupione produkty:</h2>
+        <h2>Ostatnio zakupione produkty:</h2>
         <table>
             <table>
                 <thead>
@@ -52,8 +52,12 @@
                 </c:forEach>
 
                 </tbody>
-            </table>
+        </table>
 
+        <div class="button-section">
+
+            <button> <a href="/products/add">Dodaj dostawę</a></button>
+        </div>
 
     </section>
 </main>

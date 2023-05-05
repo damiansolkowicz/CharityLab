@@ -1,4 +1,4 @@
-insert into supplier(id, city,email,name,surname) values (1,'kadź','haslo@jw.pl','janek','nowak'),(2,'warszawa','haslo@jw.pl','janddsek','nowak'), (3,'krkaów','haslo@jw.pl','jaffnek','nowak');
-insert into products(id, name, price,unit) values (1,'rower','200','szt'),(2,'skakanrka','200','szt'),(3,'costam','200','szt');
+insert into supplier( city,email,name,surname) values ('kadź','haslo@jw.pl','janek','nowak'),('warszawa','haslo@jw.pl','jan','nowak'), ('krkaów','haslo@jw.pl','tomasz','nowak');
+insert into products( name, price, unit, supplier_id) VALUES('rower',33,'szt',2), ('rower',33,'szt',2);
 
-insert into products_suppliers(product_id, supplier_id) VALUES (1,1);
+/*insert into products_suppliers(product_id, supplier_id) VALUES (1,1);*/

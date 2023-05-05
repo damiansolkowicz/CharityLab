@@ -10,6 +10,6 @@ import java.util.List;
 public interface ProductsRepository extends JpaRepository<Products, Long> {
 
     @Override
-    @EntityGraph(attributePaths = {"suppliers"})
+    @EntityGraph(attributePaths = {"supplier"})
     List <Products> findAll();
 }

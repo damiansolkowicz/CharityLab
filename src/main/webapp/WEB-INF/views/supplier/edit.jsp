@@ -8,9 +8,9 @@
     <nav class="side-menu">
         <ul>
             <li><a href="/supplier/list">Lista Dostawców</a></li>
-            <li><a href="/products/lists">Lista Produktów</a></li>
-            <li><a href="/supplier/add">Dodaj dostawcę</a></li>
-            <li><a href="products/add">Dodaj produkt</a></li>
+            <li><a href="/products/list">Lista Dostaw</a></li>
+            <li><a href="/supplier/add">Dodaj Dostawcę</a></li>
+            <li><a href="products/add">Dodaj Dostawę</a></li>
             <br>
             <li>Wyświetl dla producenta:</li>
             <br>

@@ -2,6 +2,7 @@ package pl.trading.trading.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,12 +21,16 @@ public class Products {
     private int price;
     private  String unit;
 
-    @ManyToMany
+    @ManyToOne
+    @NotNull
+    private Supplier supplier;
+
+   /* @ManyToMany
     @JoinTable(
             name = "products_suppliers",
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "supplier_id"))
     @NotEmpty
-    private List<Supplier> suppliers = new ArrayList<>();
+    private List<Supplier> suppliers = new ArrayList<>();*/
 
 }
