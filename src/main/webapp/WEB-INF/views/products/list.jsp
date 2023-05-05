@@ -13,19 +13,12 @@
             <br>
             <li>Wyświetl dla producenta:</li>
             <br>
-            <li><select>
-                <option><a href="#">Jan Nowak</a></option>
-                <option><a href="#">Jan Kowalski</a></option>
-                <option><a href="#">Damian Sołkowicz</a></option>
-                <option><a href="#">Jan Pączek</a></option>
-                <option><a href="#">Polska Papryka sp. z o.o. </a></option>
 
-            </select><li>
 
         </ul>
     </nav>
     <section class="content">
-        <h2>Zakupione produkty:</h2>
+        <h2>All supplies</h2>
         <table>
             <table>
                 <thead>
@@ -34,6 +27,7 @@
                     <th>Supplier Surname</th>
                     <th>Product</th>
                     <th>Price</th>
+                    <th>Unit</th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -44,7 +38,7 @@
                         <td><c:out value="${product.supplier.surname}"/></td>
                         <td><c:out value="${product.name}"/></td>
                         <td><c:out value="${product.price}"/></td>
-
+                        <td><c:out value="${product.unit}"/></td>
                         <td><a href="<c:out value="edit?id=${product.id}"/>">Edit</a>
                             <a href="<c:out value="delete?id=${product.id}"/>">Delete</a>
                         </td>

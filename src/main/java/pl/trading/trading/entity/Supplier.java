@@ -26,4 +26,8 @@ public class Supplier {
 
     private String email;
 
+    public String getFullName() {
+        return name + " " + surname;
+    }
+
 }

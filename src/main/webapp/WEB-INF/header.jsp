@@ -194,7 +194,7 @@
     <h1>Witaj Nazwa Firmy</h1>
     <nav class="top-menu">
         <ul>
-            <li><a href="#">Strona Główna</a></li>
+            <li><a href="/index">Strona Główna</a></li>
             <li><a href="#">Wyloguj</a></li>
         </ul>
     </nav>

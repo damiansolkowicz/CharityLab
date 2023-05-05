@@ -12,7 +12,7 @@
             <li><a href="/supplier/add">Dodaj Dostawcę</a></li>
             <li><a href="/products/add">Dodaj Dostawę</a></li>
             <br>
-            <li>Add supplier</li>
+            <li>Wyświetl dla producenta:</li>
             <br>
             <li><select>
                 <option><a href="#">Jan Nowak</a></option>
@@ -26,14 +26,15 @@
         </ul>
     </nav>
     <section class="content">
-        <h2>Dodaj nowego dostawcę:</h2>
-        <form:form method="post" modelAttribute="supplier" class="form-section">
+        <h2>Edit supply</h2>
+        <form:form method="post" modelAttribute="products" class="form-section">
 
-        <div>Name: <form:input path="name"/></div>
-        <div>Surname: <form:input path="surname"/></div>
-        <div>City: <form:input path="city"/></div>
-        <div>Email: <form:input path="email"/></div>
-        <input type="submit" value="Add supplier">
+        <div>Product Name: <form:input path="name"/></div>
+        <div>Unit: <form:input path="unit"/></div>
+        <div>Price: <form:input path="price"/></div>
+        <div>Supplier Name: <form:select path="supplier" items="${suppliers}"  itemLabel="fullName" itemValue="id"/></div><br>
+        <form:hidden path="id"/>
+        <input type="submit" value="Add products">
         </form:form>
 
 

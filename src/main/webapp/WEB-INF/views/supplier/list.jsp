@@ -26,7 +26,7 @@
         </ul>
     </nav>
     <section class="content">
-        <h2>Lista dostawców</h2>
+        <h2>All suppliers</h2>
         <table>
             <thead>
             <tr>

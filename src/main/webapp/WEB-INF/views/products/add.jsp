@@ -14,28 +14,21 @@
             <br>
             <li>Wyświetl dla producenta:</li>
             <br>
-            <li><select>
-                <option><a href="#">Jan Nowak</a></option>
-                <option><a href="#">Jan Kowalski</a></option>
-                <option><a href="#">Damian Sołkowicz</a></option>
-                <option><a href="#">Jan Pączek</a></option>
-                <option><a href="#">Polska Papryka sp. z o.o. </a></option>
-
-            </select><li>
-
+            <li>Wybi</li>
         </ul>
     </nav>
-    <section class="content">
-        <h2>Dodaj nowego dostawcę:</h2>
+    <section class="form-section">
+        <h2>Add new supply</h2>
         <form:form method="post" modelAttribute="products" class="form-section">
 
-        <div>Name: <form:input path="name"/></div>
+        <div>Product Name: <form:input path="name"/></div>
         <div>Unit: <form:input path="unit"/></div>
         <div>Price: <form:input path="price"/></div>
+        <div>Supplier Name: <form:select path="supplier" items="${suppliers}"  itemLabel="fullName" itemValue="id"/></div><br>
         <input type="submit" value="Add products">
         </form:form>
 
-
+    </section>
 
 
 </main>

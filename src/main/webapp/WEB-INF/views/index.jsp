@@ -34,6 +34,7 @@
                     <th>Supplier Surname</th>
                     <th>Product</th>
                     <th>Price</th>
+                    <th>Unit</th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -44,7 +45,7 @@
                         <td><c:out value="${product.supplier.surname}"/></td>
                         <td><c:out value="${product.name}"/></td>
                         <td><c:out value="${product.price}"/></td>
-
+                        <td><c:out value="${product.unit}"/></td>
                         <td><a href="<c:out value="edit?id=${product.id}"/>">Edit</a>
                             <a href="<c:out value="delete?id=${product.id}"/>">Delete</a>
                         </td>

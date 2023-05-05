@@ -26,7 +26,7 @@
         </ul>
     </nav>
     <section class="content">
-        <h2>Dodaj nowego dostawcę:</h2>
+        <h2>Edit Supplier</h2>
         <form:form method="post" modelAttribute="supplier" class="form-section">
 
         <div>Name: <form:input path="name"/></div>
