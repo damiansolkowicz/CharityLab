@@ -19,7 +19,10 @@ public class Products {
     private int id;
     private String name;
     private int price;
-    private  String unit;
+    private String unit;
+    /*@ManyToOne
+    @NotNull
+    private  Unit unit;*/
 
     @ManyToOne
     @NotNull

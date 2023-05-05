@@ -21,14 +21,14 @@
         <h2>Add new supply</h2>
         <form:form method="post" modelAttribute="products" class="form-section">
 
-        <div>Product Name: <form:input path="name"/></div>
-        <div>Unit: <form:input path="unit"/></div>
-        <div>Price: <form:input path="price"/></div>
-        <div>Supplier Name: <form:select path="supplier" items="${suppliers}"  itemLabel="fullName" itemValue="id"/></div><br>
-        <input type="submit" value="Add products">
+            <div>Product Name: <form:input path="name"/></div>
+            <div>Unit: <form:input path="unit"/></div>
+            <div>Price: <form:input path="price"/></div>
+            <div>Supplier Name: <form:select path="supplier" items="${suppliers}"  itemLabel="fullName" itemValue="id"/></div><br>
+            <input type="submit" value="Add products">
         </form:form>
-
     </section>
+
 
 
 </main>
