@@ -1,18 +1,14 @@
 package pl.trading.trading.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Getter
 @Setter
-@Table(name="products")
+@Table(name = "products")
 public class Products {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

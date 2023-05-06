@@ -12,5 +12,5 @@ public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer id;
-    private  String name;
+    private String name;
 }

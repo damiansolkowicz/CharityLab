@@ -17,12 +17,14 @@ public class SupplierServiceImpl implements SupplierService {
     private final SupplierRepository supplierRepository;
 
     @Override
-    public void save(Supplier supplier) { supplierRepository.save(supplier);
+    public void save(Supplier supplier) {
+        supplierRepository.save(supplier);
 
     }
 
     @Override
-    public void update(Supplier supplier) { supplierRepository.save(supplier);
+    public void update(Supplier supplier) {
+        supplierRepository.save(supplier);
 
     }
 
@@ -38,6 +40,6 @@ public class SupplierServiceImpl implements SupplierService {
 
     @Override
     public void deleteById(Long id) {
-    supplierRepository.deleteById(id);
+        supplierRepository.deleteById(id);
     }
 }

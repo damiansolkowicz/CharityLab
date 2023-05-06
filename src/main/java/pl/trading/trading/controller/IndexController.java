@@ -16,10 +16,10 @@ public class IndexController {
 
 
     @GetMapping(path = "/index")
-    String showProductsList(Model model){
-        List<Products> products=productsService.findAll();
+    String showProductsList(Model model) {
+        List<Products> products = productsService.findAll();
         model.addAttribute("products", products);
-        return  "/index";
+        return "/index";
     }
 
-    }
+}
