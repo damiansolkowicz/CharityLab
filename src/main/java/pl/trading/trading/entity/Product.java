@@ -25,13 +25,13 @@ public class Product {
     @NotNull
     private Supplier supplier;
 
-    public double getToPay() {
+/*    public double getToPay() {
         return quantity*price;
     }
 
     public void setToPay(double toPay) {
         this.toPay = toPay;
-    }
+    }*/
 /* @ManyToMany
     @JoinTable(
             name = "products_suppliers",
