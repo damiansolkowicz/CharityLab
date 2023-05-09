@@ -29,13 +29,13 @@ class SupplierController {
     }
 
     @GetMapping(path = "/supplier/add")
-    String showAddBookForm(Model model) {
+    String showAddSupplierForm(Model model) {
         model.addAttribute("supplier", new Supplier());
         return "supplier/add";
     }
 
     @PostMapping(path = "/supplier/add")
-    String processAddBookForm(@Valid Supplier supplier, BindingResult errors) {
+    String processAddSupplierForm(@Valid Supplier supplier, BindingResult errors) {
 
         if (errors.hasErrors()) {
             return "supplier/add";
@@ -53,7 +53,7 @@ class SupplierController {
     }
 
     @PostMapping(path = "/supplier/edit")
-    String processEditBookForm(@Valid Supplier supplier, BindingResult errors) {
+    String processEditSupplierForm(@Valid Supplier supplier, BindingResult errors) {
 
         if (errors.hasErrors()) {
             return "supplier/edit";

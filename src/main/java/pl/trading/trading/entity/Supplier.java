@@ -1,6 +1,7 @@
 package pl.trading.trading.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -18,6 +19,7 @@ public class Supplier {
     private String name;
     private String surname;
     private String city;
+    @Email
     private String email;
 
     public String getFullName() {

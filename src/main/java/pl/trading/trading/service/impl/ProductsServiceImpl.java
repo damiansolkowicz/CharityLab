@@ -3,11 +3,12 @@ package pl.trading.trading.service.impl;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import pl.trading.trading.entity.Products;
+import pl.trading.trading.entity.Product;
 import pl.trading.trading.repository.ProductsRepository;
 import pl.trading.trading.service.ProductsService;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 @Service
 @Transactional
@@ -17,29 +18,22 @@ public class ProductsServiceImpl implements ProductsService {
     private final ProductsRepository productsRepository;
 
     @Override
-    public void save(Products products) {
-        productsRepository.save(products);
-
-    }
+    public void save(Product product) {productsRepository.save(product);}
 
     @Override
-    public void update(Products products) {
-        productsRepository.save(products);
-
-    }
+    public void update(Product product) {productsRepository.save(product);}
+    @Override
+    public Product findById(Long id) {return productsRepository.findById(id).get();}
 
     @Override
-    public Products findById(Long id) {
-        return productsRepository.findById(id).get();
-    }
+    public List<Product> findAll() {return productsRepository.findAll();}
 
     @Override
-    public List<Products> findAll() {
-        return productsRepository.findAll();
-    }
+    public void deleteById(Long id) {productsRepository.deleteById(id);}
 
     @Override
-    public void deleteById(Long id) {
-        productsRepository.deleteById(id);
+    public List<Product> findBySupplierId(Long id) {return productsRepository.findBySupplierId(id);
     }
+
+
 }

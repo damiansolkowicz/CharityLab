@@ -2,28 +2,7 @@
 <html lang="en">
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/WEB-INF/header.jsp" %>
-
-<main>
-    <nav class="side-menu">
-        <ul>
-            <li><a href="/supplier/list">Lista Dostawców</a></li>
-            <li><a href="/products/list">Lista Dostaw</a></li>
-            <li><a href="/supplier/add">Dodaj Dostawcę</a></li>
-            <li><a href="/products/add">Dodaj Dostawę</a></li>
-            <br>
-            <li>Wyświetl dla producenta:</li>
-            <br>
-            <li><select>
-                <option><a href="#">Jan Nowak</a></option>
-                <option><a href="#">Jan Kowalski</a></option>
-                <option><a href="#">Damian Sołkowicz</a></option>
-                <option><a href="#">Jan Pączek</a></option>
-                <option><a href="#">Polska Papryka sp. z o.o. </a></option>
-
-            </select><li>
-
-        </ul>
-    </nav>
+<%@ include file="/WEB-INF/sidenav.jsp" %>
     <section class="content">
         <h2>Ostatnio zakupione produkty:</h2>
         <table>
@@ -45,7 +24,7 @@
                         <td><c:out value="${product.supplier.surname}"/></td>
                         <td><c:out value="${product.name}"/></td>
                         <td><c:out value="${product.price}"/></td>
-                        <td><c:out value="${product.unit}"/></td>
+                        <td><c:out value="${product.unit.name}"/></td>
                         <td><a href="<c:out value="products/edit?id=${product.id}"/>">Edit</a>
                             <a href="<c:out value="products/delete?id=${product.id}"/>">Delete</a>
                         </td>

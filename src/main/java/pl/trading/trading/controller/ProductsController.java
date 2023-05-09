@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import pl.trading.trading.entity.Products;
+import pl.trading.trading.entity.Product;
 import pl.trading.trading.entity.Supplier;
+import pl.trading.trading.entity.Unit;
 import pl.trading.trading.service.ProductsService;
 import pl.trading.trading.service.SupplierService;
+import pl.trading.trading.service.UnitService;
 
 import java.util.List;
 
@@ -23,29 +25,31 @@ class ProductsController {
 
     private final ProductsService productsService;
     private final SupplierService supplierService;
+    private final UnitService unitService;
 
 
     @GetMapping(path = "/products/list")
     String showProductsList(Model model) {
-        List<Products> products = productsService.findAll();
-        model.addAttribute("products", products);
+        List<Product> product = productsService.findAll();
+        model.addAttribute("products", product);
         return "/products/list";
     }
 
     @GetMapping(path = "/products/add")
     String showAddProductsForm(Model model) {
-        model.addAttribute("products", new Products());
+        model.addAttribute("products", new Product());
         return "products/add";
     }
 
     @PostMapping(path = "/products/add")
-    String processAddProductsForm(@Valid Products products, BindingResult errors) {
+    String processAddProductsForm(@Valid Product product, BindingResult errors) {
 
         if (errors.hasErrors()) {
             return "products/add";
         }
-
-        productsService.save(products);
+        double totalPrice = product.getPrice() * product.getQuantity();
+        product.setToPay(totalPrice);
+        productsService.save(product);
 
         return "redirect:/products/list";
     }
@@ -57,13 +61,13 @@ class ProductsController {
     }
 
     @PostMapping(path = "/products/edit")
-    String processEditProductsForm(@Valid Products products, BindingResult errors) {
+    String processEditProductsForm(@Valid Product product, BindingResult errors) {
 
         if (errors.hasErrors()) {
             return "products/edit";
         }
 
-        productsService.update(products);
+        productsService.update(product);
 
         return "redirect:/products/list";
     }
@@ -73,9 +77,20 @@ class ProductsController {
         productsService.deleteById(id);
         return "redirect:/products/list";
     }
+    @GetMapping(path = "supplier/supplies", params = "supplierId")
+    String findBySupplierId(@RequestParam Long supplierId, Model model) {
+
+        List<Product> products = productsService.findBySupplierId(supplierId);
+        model.addAttribute("products", products);
+
+        return "products/supplies";
+    }
 
     @ModelAttribute("suppliers")
     List<Supplier> suppliers() {
         return supplierService.findAll();
     }
+
+    @ModelAttribute("units")
+    List<Unit> units(){return unitService.findAll();}
 }

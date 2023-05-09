@@ -1,19 +1,21 @@
 package pl.trading.trading.service;
 
 
-import pl.trading.trading.entity.Products;
+import pl.trading.trading.entity.Product;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 public interface ProductsService {
 
-    void save(Products products);
+    void save(Product product);
 
-    void update(Products products);
+    void update(Product product);
 
-    Products findById(Long id);
+    Product findById(Long id);
 
-    List<Products> findAll();
+    List<Product> findAll();
 
     void deleteById(Long id);
+    List<Product> findBySupplierId(Long id);
 }

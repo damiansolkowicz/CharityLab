@@ -9,22 +9,30 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "products")
-public class Products {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private int price;
-    private String unit;
-    /*@ManyToOne
-    @NotNull
-    private  Unit unit;*/
-
+    private double price;
+    private  double quantity;
+    private double toPay;
     @ManyToOne
+    @NotNull
+    private  Unit unit;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @NotNull
     private Supplier supplier;
 
-   /* @ManyToMany
+    public double getToPay() {
+        return quantity*price;
+    }
+
+    public void setToPay(double toPay) {
+        this.toPay = toPay;
+    }
+/* @ManyToMany
     @JoinTable(
             name = "products_suppliers",
             joinColumns = @JoinColumn(name = "product_id"),

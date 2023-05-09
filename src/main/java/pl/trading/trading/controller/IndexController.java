@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import pl.trading.trading.entity.Products;
+import pl.trading.trading.entity.Product;
 import pl.trading.trading.service.ProductsService;
 
 import java.util.List;
@@ -17,7 +17,7 @@ public class IndexController {
 
     @GetMapping(path = "/index")
     String showProductsList(Model model) {
-        List<Products> products = productsService.findAll();
+        List<Product> products = productsService.findAll();
         model.addAttribute("products", products);
         return "/index";
     }

@@ -4,7 +4,8 @@
 <%@ include file="/WEB-INF/header.jsp" %>
 <%@ include file="/WEB-INF/sidenav.jsp" %>
     <section class="content">
-        <h2>All supplies</h2>
+        <c:set var="firstProduct" value="${products[0]}" />
+        <h2>All supplies for <c:out value="${firstProduct.supplier.fullName}"/></h2>
         <table>
             <table>
                 <thead>
