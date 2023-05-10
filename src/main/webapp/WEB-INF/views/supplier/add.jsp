@@ -14,6 +14,7 @@
         <div>Surname: <form:input path="surname"/></div>
         <div>City: <form:input path="city"/></div>
         <div>Email: <form:input path="email"/></div>
+        <div>Pesel: <form:input path="pesel"/></div>
         <input type="submit" value="Add supplier">
         </form:form>
 

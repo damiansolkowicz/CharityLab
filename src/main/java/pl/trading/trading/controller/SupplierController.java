@@ -12,6 +12,7 @@ import pl.trading.trading.entity.Supplier;
 import pl.trading.trading.service.SupplierService;
 
 import java.util.List;
+import java.util.Random;
 
 
 @Controller
@@ -40,7 +41,6 @@ class SupplierController {
         if (errors.hasErrors()) {
             return "supplier/add";
         }
-
         supplierService.save(supplier);
 
         return "redirect:/supplier/list";

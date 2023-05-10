@@ -15,6 +15,7 @@
                 <th>Surname</th>
                 <th>City</th>
                 <th>Email</th>
+                <th>Pesel</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -25,6 +26,7 @@
                 <td><c:out value="${supplier.surname}"/></td>
                 <td><c:out value="${supplier.city}"/></td>
                 <td><c:out value="${supplier.email}"/></td>
+                <td><c:out value="${supplier.pesel}"/></td>
                 <td><a href="<c:out value="edit?id=${supplier.id}"/>">Edit</a>
                     <a href="<c:out value="delete?id=${supplier.id}"/>">Delete</a>
                     <a href="<c:out value="supplies?supplierId=${supplier.id}"/>">All supplies</a>

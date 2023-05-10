@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Email;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.validator.constraints.pl.PESEL;
 
 
 @Entity
@@ -21,6 +22,8 @@ public class Supplier {
     private String city;
     @Email
     private String email;
+    @PESEL
+    private String pesel;
 
     public String getFullName() {
         return name + " " + surname;

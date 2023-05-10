@@ -11,8 +11,6 @@
                 <thead>
                 <tr>
                     <th>lp.</th>
-                    <th>Supplier Name</th>
-                    <th>Supplier Surname</th>
                     <th>Product</th>
                     <th>Price (zł)</th>
                     <th>Quantity</th>
@@ -25,8 +23,6 @@
                 <c:forEach items="${products}" var="product"  varStatus="loop">
                     <tr>
                         <td><c:out value="${loop.index+1}"/></td>
-                        <td><c:out value="${product.supplier.name}"/></td>
-                        <td><c:out value="${product.supplier.surname}"/></td>
                         <td><c:out value="${product.name}"/></td>
                         <td><c:out value="${product.price}"/></td>
                         <td><c:out value="${product.quantity}"/></td>
