@@ -43,14 +43,12 @@ class ProductsController {
 
     @PostMapping(path = "/products/add")
     String processAddProductsForm(@Valid Product product, BindingResult errors) {
-
         if (errors.hasErrors()) {
             return "products/add";
         }
         double totalPrice = product.getPrice() * product.getQuantity();
         product.setToPay(totalPrice);
         productsService.save(product);
-
         return "redirect:/products/list";
     }
 
@@ -62,13 +60,10 @@ class ProductsController {
 
     @PostMapping(path = "/products/edit")
     String processEditProductsForm(@Valid Product product, BindingResult errors) {
-
         if (errors.hasErrors()) {
             return "products/edit";
         }
-
         productsService.update(product);
-
         return "redirect:/products/list";
     }
 
@@ -77,13 +72,24 @@ class ProductsController {
         productsService.deleteById(id);
         return "redirect:/products/list";
     }
+
     @GetMapping(path = "supplier/supplies", params = "supplierId")
     String findBySupplierId(@RequestParam Long supplierId, Model model) {
-
         List<Product> products = productsService.findBySupplierId(supplierId);
         model.addAttribute("products", products);
-
         return "products/supplies";
+    }
+
+    @GetMapping(path = "/pesel", params = "pesel")
+    String findBySupplierPesel(@RequestParam String pesel, Model model) {
+        List<Product> products = productsService.findBySupplierPesel(pesel);
+        model.addAttribute("products", products);
+        return "products/listSuppliesByPesel";
+    }
+
+    @GetMapping("/pesel")
+    public String findBySupplierPesel() {
+        return "products/searchSuppliesByPesel";
     }
 
     @ModelAttribute("suppliers")
@@ -92,5 +98,7 @@ class ProductsController {
     }
 
     @ModelAttribute("units")
-    List<Unit> units(){return unitService.findAll();}
+    List<Unit> units() {
+        return unitService.findAll();
+    }
 }

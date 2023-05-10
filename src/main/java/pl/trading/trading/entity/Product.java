@@ -26,6 +26,7 @@ public class Product {
     private Supplier supplier;
 
 
+
 /* @ManyToMany
     @JoinTable(
             name = "products_suppliers",

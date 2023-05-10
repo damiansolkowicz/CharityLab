@@ -13,4 +13,7 @@ public interface ProductsRepository extends JpaRepository<Product, Long> {
     List<Product> findAll();
   @EntityGraph(attributePaths = {"unit", "supplier"})
   List<Product> findBySupplierId(Long id);
+
+  @EntityGraph(attributePaths = {"unit","supplier"})
+    List<Product> findBySupplierPesel(String pesel);
 }

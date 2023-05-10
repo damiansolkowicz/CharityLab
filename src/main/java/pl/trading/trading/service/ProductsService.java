@@ -18,4 +18,5 @@ public interface ProductsService {
 
     void deleteById(Long id);
     List<Product> findBySupplierId(Long id);
+    List<Product> findBySupplierPesel(String pesel);
 }

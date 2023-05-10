@@ -35,5 +35,10 @@ public class ProductsServiceImpl implements ProductsService {
     public List<Product> findBySupplierId(Long id) {return productsRepository.findBySupplierId(id);
     }
 
+    @Override
+    public List<Product> findBySupplierPesel(String pesel) {
+        return productsRepository.findBySupplierPesel(pesel);
+    }
+
 
 }
