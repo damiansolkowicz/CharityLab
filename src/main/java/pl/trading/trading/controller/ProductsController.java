@@ -32,7 +32,7 @@ class ProductsController {
     String showProductsList(Model model) {
         List<Product> product = productsService.findAll();
         model.addAttribute("products", product);
-        return "/products/list";
+        return "products/list";
     }
 
     @GetMapping(path = "/products/add")

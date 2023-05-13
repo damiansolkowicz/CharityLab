@@ -191,7 +191,7 @@
 </head>
 <body>
 <header>
-    <h1>Witaj Nazwa Firmy</h1>
+     <h1>Witaj ${username}</h1>
     <nav class="top-menu">
         <ul>
             <li><a href="/index">Strona Główna</a></li>
