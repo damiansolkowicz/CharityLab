@@ -195,7 +195,7 @@
     <nav class="top-menu">
         <ul>
             <li><a href="/index">Strona Główna</a></li>
-            <li><a href="#">Wyloguj</a></li>
+            <li><a href="/logout">Wyloguj</a></li>
         </ul>
     </nav>
 </header>

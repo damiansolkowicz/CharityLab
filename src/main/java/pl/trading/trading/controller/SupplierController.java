@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import pl.trading.trading.entity.Supplier;
 import pl.trading.trading.service.SupplierService;
-
 import java.util.List;
 import java.util.Random;
 

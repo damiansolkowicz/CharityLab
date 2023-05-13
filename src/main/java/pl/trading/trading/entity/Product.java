@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
+
+
 @Entity
 @Getter
 @Setter
@@ -18,7 +20,6 @@ public class Product {
     private  double quantity;
     private double toPay;
     @ManyToOne
-    @NotNull
     private  Unit unit;
 
     @ManyToOne(fetch = FetchType.LAZY)

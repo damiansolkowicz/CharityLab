@@ -19,7 +19,7 @@ public class IndexController {
     String showProductsList(Model model) {
         List<Product> products = productsService.findAll();
         model.addAttribute("products", products);
-        return "/index";
+        return "index";
     }
 
 }

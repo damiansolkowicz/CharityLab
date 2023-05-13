@@ -1,6 +1,10 @@
 server:
   port: 8080
 spring:
+  security:
+    user:
+      name: user
+      password: user
   mvc:
     view:
       prefix: /WEB-INF/views/
