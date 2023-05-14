@@ -1,21 +1,75 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supply Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-<main>
-    <section class="content">
-        <h2>Zarejestruj się:</h2>
-        <form:form method="post" modelAttribute="user" class="form-section">
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-        <div>Name: <form:input path="firstName"/></div>
-        <div>Surname: <form:input path="lastName"/></div>
-        <div>City: <form:input path="email"/></div>
-        <div>Email: <form:input path="password"/></div>
-        <input type="submit" value="Register">
-        </form:form>
+        h1 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
 
+        a {
+            display: block;
+            width: 300px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #333;
+            transition: background-color 0.3s ease;
+        }
 
+        a:hover {
+            background-color: #666;
+        }
+
+    </style>
+</head>
+<body>
+<section class="form-section">
+    <h2>Add user</h2>
+    <form:form method="post" modelAttribute="user" class="form-section">
+
+        <div>First Name: <form:input path="firstName"/></div>
+        <div>Last Name: <form:input path="lastName"/></div>
+        <div>Login: <form:input path="login"/></div>
+        <div>Email: <form:input path="email"/></div>
+        <div>Password: <form:input path="password" type="password"/></div>
+        <div>Password: <form:input path="roles" /></div>
+        <input type="submit" value="Add products">
+    </form:form>
+</section>
+
+</body>
+</html>
 
 
 </main>

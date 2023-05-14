@@ -19,7 +19,7 @@ class SpringSecurityConfiguration {
                 .authorizeHttpRequests(authorization ->
                         authorization
                                 .shouldFilterAllDispatcherTypes(false)
-                                .requestMatchers(HttpMethod.GET, "/pesel","/home","/register").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/pesel","/home","/registration").permitAll()
                                 .anyRequest()
                                 .authenticated())
                 .formLogin(form ->

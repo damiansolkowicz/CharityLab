@@ -197,8 +197,8 @@
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <input type="submit" value="Zaloguj">
         </form>
+        <a href="/registration">Register</a>
 
-
-
+    </section>
 </main>
 <%@ include file="/WEB-INF/footer.jsp" %>

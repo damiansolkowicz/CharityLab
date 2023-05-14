@@ -1,3 +1,4 @@
+/*
 package pl.trading.trading;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -11,3 +12,4 @@ public class ServletInitializer extends SpringBootServletInitializer {
 	}
 
 }
+*/

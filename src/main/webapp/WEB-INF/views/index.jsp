@@ -18,7 +18,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${products}" var="product">
+                <c:forEach items="${products}" var="product" end="10">
                     <tr>
                         <td><c:out value="${product.supplier.name}"/></td>
                         <td><c:out value="${product.supplier.surname}"/></td>
@@ -35,7 +35,7 @@
 
         <div class="button-section">
 
-            <button> <a href="/products/add">Dodaj dostawę</a></button>
+            <button> <a href="/products/add">Add supply</a></button>
         </div>
 
     </section>

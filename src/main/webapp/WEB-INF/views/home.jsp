@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Menadżer Dostaw</title>
+    <title>Supply Manager</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -57,7 +57,7 @@
 <div class="container">
     <h1>Witaj na Menadżerze Dostaw</h1>
     <a href="/login">Zaloguj</a>
-    <a href="/register">Zarejestruj</a>
+    <a href="/registration">Zarejestruj</a>
     <a href="/pesel">Wyszukaj po PESEL</a>
 </div>
 </body>
