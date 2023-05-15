@@ -190,14 +190,19 @@
 <body>
 <main>
     <section class="content">
-        <h2>Zaloguj się:</h2>
-        <form method="post">
-            Username: <input type="text" name="username">
-            Password: <input type="password" name="password">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            <input type="submit" value="Zaloguj">
+
+        <form action="/login" method="post">
+            <h2>Zaloguj się:</h2>
+            <p>
+                email: <input type="text" name="email">
+            </p>
+            <p>
+                pass :<input type="password" name="password">
+            </p>
+            <button type="submit">login</button>
+            <a href="/registration">Register</a>
         </form>
-        <a href="/registration">Register</a>
+
 
     </section>
 </main>

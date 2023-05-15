@@ -1,47 +1,46 @@
 package pl.trading.trading.security;
 
-import lombok.RequiredArgsConstructor;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 import pl.trading.trading.entity.Role;
 import pl.trading.trading.entity.User;
 import pl.trading.trading.repository.UserRepository;
 
-
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-@RequiredArgsConstructor
-class CustomUserDetailsService implements UserDetailsService {
+@Service
+public class CustomUserDetailsService implements UserDetailsService {
 
-    private final UserRepository userRepository;
+    private UserRepository userRepository;
+
+    public CustomUserDetailsService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(email);
 
-        final User user =
-                userRepository.findByLogin(username)
-                        .orElseThrow(() -> new UsernameNotFoundException("User " + username + " not found!"));
+        if (user != null) {
+            return new org.springframework.security.core.userdetails.User(user.getEmail(),
+                    user.getPassword(),
+                    mapRolesToAuthorities(user.getRoles()));
+        }else{
+            throw new UsernameNotFoundException("Invalid username or password.");
+        }
+    }
 
-        final String password = user.getPassword();
-
-        final Collection<? extends GrantedAuthority> authorities =
-                user
-                    .getRoles()
-                    .stream()
-                    .map(Role::getName)
-                    .map("ROLE_"::concat)
-                    .map(SimpleGrantedAuthority::new)
-                    .collect(Collectors.toList());
-
-        final boolean accountNonExpired = true;
-        final boolean accountNonLocked = true;
-        final boolean credentialsNonExpired = true;
-        final boolean enabled = true;
-
-        return new CustomUserDetails(username, password, authorities, accountNonExpired,
-                accountNonLocked, credentialsNonExpired, enabled);
+    private Collection < ? extends GrantedAuthority> mapRolesToAuthorities(Collection <Role> roles) {
+        Collection < ? extends GrantedAuthority> mapRoles = roles.stream()
+                .map(role -> new SimpleGrantedAuthority(role.getName()))
+                .collect(Collectors.toList());
+        return mapRoles;
     }
 }
+

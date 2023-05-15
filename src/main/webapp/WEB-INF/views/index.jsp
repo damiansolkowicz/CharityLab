@@ -4,6 +4,8 @@
 <%@ include file="/WEB-INF/header.jsp" %>
 <%@ include file="/WEB-INF/sidenav.jsp" %>
     <section class="content">
+        <h1>Jesteś zalogowany jako ${name}</h1>
+        <hr>
         <h2>Ostatnio zakupione produkty:</h2>
         <table>
             <table>
@@ -18,7 +20,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${products}" var="product" end="10">
+                <c:forEach items="${products}" var="product" end="9">
                     <tr>
                         <td><c:out value="${product.supplier.name}"/></td>
                         <td><c:out value="${product.supplier.surname}"/></td>
@@ -39,5 +41,6 @@
         </div>
 
     </section>
+
 </main>
 <%@ include file="/WEB-INF/footer.jsp" %>
