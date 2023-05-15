@@ -28,12 +28,4 @@ public class Product {
 
 
 
-/* @ManyToMany
-    @JoinTable(
-            name = "products_suppliers",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "supplier_id"))
-    @NotEmpty
-    private List<Supplier> suppliers = new ArrayList<>();*/
-
 }

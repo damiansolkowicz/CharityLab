@@ -41,11 +41,15 @@ public class SpringSecurity {
                 .formLogin(form ->
                         form
                                 .loginPage("/login")
-                                .defaultSuccessUrl("/index")
+                                .usernameParameter("email")
+                                .defaultSuccessUrl("/index",true)
                                 .permitAll())
                 .logout().logoutSuccessUrl("/home")
                 .logoutUrl("/logout")
-                .and().exceptionHandling();
+                .and().exceptionHandling()
+                .and()
+                .csrf()
+                .disable();
         return httpSecurity.build();
     }
 
