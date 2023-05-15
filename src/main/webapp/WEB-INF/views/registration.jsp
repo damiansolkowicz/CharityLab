@@ -60,11 +60,9 @@
 
         <div>First Name: <form:input path="firstName"/></div>
         <div>Last Name: <form:input path="lastName"/></div>
-        <div>Login: <form:input path="login"/></div>
         <div>Email: <form:input path="email"/></div>
-        <div>Password: <form:input path="password" type="password"/></div>
-        <div>Password: <form:input path="roles" /></div>
-        <input type="submit" value="Add products">
+        <div>Password: <form:input path="password" /></div>
+        <input type="submit" value="Add user">
     </form:form>
 </section>
 

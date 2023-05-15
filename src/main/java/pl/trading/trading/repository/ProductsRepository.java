@@ -6,14 +6,14 @@ import pl.trading.trading.entity.Product;
 
 import java.util.List;
 
-public interface ProductsRepository extends JpaRepository<Product, Long> {
+    public interface ProductsRepository extends JpaRepository<Product, Long> {
 
-    @Override
-    @EntityGraph(attributePaths = {"supplier"})
-    List<Product> findAll();
-  @EntityGraph(attributePaths = {"unit", "supplier"})
-  List<Product> findBySupplierId(Long id);
+        @Override
+        @EntityGraph(attributePaths = {"supplier"})
+        List<Product> findAll();
+        @EntityGraph(attributePaths = {"unit", "supplier"})
+        List<Product> findBySupplierId(Long id);
 
-  @EntityGraph(attributePaths = {"unit","supplier"})
-    List<Product> findBySupplierPesel(String pesel);
-}
+        @EntityGraph(attributePaths = {"unit","supplier"})
+        List<Product> findBySupplierPesel(String pesel);
+    }

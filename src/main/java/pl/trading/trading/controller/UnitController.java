@@ -45,7 +45,7 @@ class UnitController {
 
         unitService.save(unit);
 
-        return "redirect:/unit/list";
+        return "unit/list";
     }
 
     @GetMapping(path = "/unit/edit")
@@ -69,6 +69,6 @@ class UnitController {
     @GetMapping(path = "unit/delete")
     String deleteUnits(@RequestParam long id) {
         unitService.deleteById(id);
-        return "redirect:/unit/list";
+        return "unit/list";
     }
 }

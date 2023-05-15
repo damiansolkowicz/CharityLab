@@ -42,7 +42,7 @@ class SupplierController {
         }
         supplierService.save(supplier);
 
-        return "redirect:/supplier/list";
+        return "supplier/list";
     }
 
     @GetMapping(path = "/supplier/edit")
@@ -60,12 +60,12 @@ class SupplierController {
 
         supplierService.update(supplier);
 
-        return "redirect:/supplier/list";
+        return "supplier/list";
     }
 
     @GetMapping(path = "supplier/delete")
     String deleteProducts(@RequestParam long id) {
         supplierService.deleteById(id);
-        return "redirect:/supplier/list";
+        return "supplier/list";
     }
 }
