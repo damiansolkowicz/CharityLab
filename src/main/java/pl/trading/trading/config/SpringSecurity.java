@@ -11,7 +11,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -21,29 +20,24 @@ public class SpringSecurity {
     private UserDetailsService userDetailsService;
 
     @Bean
-    public static PasswordEncoder passwordEncoder(){
+    public static PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity httpSecurity) throws Exception {
-
-        httpSecurity
-                .authorizeHttpRequests(authorization ->
-                        authorization
-                                .shouldFilterAllDispatcherTypes(false)
-                                .requestMatchers(HttpMethod.GET, "/pesel","/home","/registration").permitAll()
-                                .requestMatchers(HttpMethod.POST,"/registration").permitAll()
-                                .requestMatchers(HttpMethod.GET,"/products/**","/supplier/**","/unit/**").hasRole("USER")
-                                .requestMatchers(HttpMethod.POST,"/products/**","/supplier/**","/unit/**").hasRole("USER")
-                                .anyRequest()
-                                .authenticated())
-                .formLogin(form ->
-                        form
-                                .loginPage("/login")
-                                .usernameParameter("email")
-                                .defaultSuccessUrl("/index",true)
-                                .permitAll())
+        httpSecurity.authorizeHttpRequests(authorization ->
+                authorization.shouldFilterAllDispatcherTypes(false)
+                        .requestMatchers(HttpMethod.GET, "/pesel", "/home", "/registration").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/registration").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/products/**", "/supplier/**", "/unit/**").hasAuthority("USER")
+                        .requestMatchers(HttpMethod.POST, "/products/**", "/supplier/**", "/unit/**").hasAuthority("USER")
+                        .anyRequest().authenticated())
+                .formLogin(form -> form
+                        .loginPage("/login")
+                        .usernameParameter("email")
+                        .defaultSuccessUrl("/index", true)
+                        .permitAll())
                 .logout().logoutSuccessUrl("/home")
                 .logoutUrl("/logout")
                 .and().exceptionHandling()
@@ -55,8 +49,6 @@ public class SpringSecurity {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .userDetailsService(userDetailsService)
-                .passwordEncoder(passwordEncoder());
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 }

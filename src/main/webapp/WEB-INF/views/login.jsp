@@ -190,8 +190,9 @@
 <body>
 <main>
     <section class="content">
-        <h2>Zaloguj się:</h2>
+
         <form action="/login" method="post">
+            <h2>Zaloguj się:</h2>
             <p>
                 email: <input type="text" name="email">
             </p>
@@ -199,8 +200,9 @@
                 pass :<input type="password" name="password">
             </p>
             <button type="submit">login</button>
+            <a href="/registration">Register</a>
         </form>
-        <a href="/registration">Register</a>
+
 
     </section>
 </main>

@@ -49,7 +49,7 @@ class ProductsController {
         double totalPrice = product.getPrice() * product.getQuantity();
         product.setToPay(totalPrice);
         productsService.save(product);
-        return "products/list";
+        return "redirect:/products/list";
     }
 
     @GetMapping(path = "/products/edit")
@@ -64,13 +64,13 @@ class ProductsController {
             return "products/edit";
         }
         productsService.update(product);
-        return "products/list";
+        return "redirect:/products/list";
     }
 
     @GetMapping(path = "products/delete")
     String deleteProducts(@RequestParam long id) {
         productsService.deleteById(id);
-        return "products/list";
+        return "redirect:/products/list";
     }
 
     @GetMapping(path = "supplier/supplies", params = "supplierId")
