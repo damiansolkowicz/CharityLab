@@ -194,6 +194,7 @@
                 <thead>
                 <tr>
                     <th>lp.</th>
+                    <th>Date</th>
                     <th>Product</th>
                     <th>Price (zł)</th>
                     <th>Quantity</th>
@@ -205,6 +206,7 @@
                 <c:forEach items="${products}" var="product"  varStatus="loop">
                     <tr>
                         <td><c:out value="${loop.index+1}"/></td>
+                        <td><c:out value="${product.localDate}"/></td>
                         <td><c:out value="${product.name}"/></td>
                         <td><c:out value="${product.price}"/></td>
                         <td><c:out value="${product.quantity}"/></td>
