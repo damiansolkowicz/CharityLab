@@ -27,6 +27,8 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @NotNull
     private Supplier supplier;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
 
 
 }
