@@ -18,10 +18,10 @@ public class IndexController {
 
     @GetMapping(path = "/index")
     public String index(Principal principal, Model model) {
-        List<Product> productList = productsService.findAll();
-        String name = principal.getName();
-        model.addAttribute("name", name);
-        model.addAttribute("products", productList);
+        String email=principal.getName();
+        List<Product> product = productsService.findByUserEmail(email);
+        model.addAttribute("name", email);
+        model.addAttribute("products", product);
         return "index";
     }
 

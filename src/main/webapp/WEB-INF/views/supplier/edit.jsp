@@ -13,7 +13,7 @@
         <div>Surname: <form:input path="surname"/></div>
         <div>City: <form:input path="city"/></div>
         <div>Email: <form:input path="email"/></div>
-            <div>Email: <form:input path="pesel"/></div>
+            <div>Pesel: <form:input path="pesel"/></div>
             <form:hidden path="id"/>
         <input type="submit" value="Edit supplier">
         </form:form>
