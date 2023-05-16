@@ -27,12 +27,12 @@ public class SpringSecurity {
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests(authorization ->
-                authorization.shouldFilterAllDispatcherTypes(false)
-                        .requestMatchers(HttpMethod.GET, "/pesel", "/home", "/registration").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/registration").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/products/**", "/supplier/**", "/unit/**").hasAuthority("USER")
-                        .requestMatchers(HttpMethod.POST, "/products/**", "/supplier/**", "/unit/**").hasAuthority("USER")
-                        .anyRequest().authenticated())
+                        authorization.shouldFilterAllDispatcherTypes(false)
+                                .requestMatchers(HttpMethod.GET, "/pesel", "/home", "/registration").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/registration").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/products/**", "/supplier/**", "/unit/**").hasAuthority("USER")
+                                .requestMatchers(HttpMethod.POST, "/products/**", "/supplier/**", "/unit/**").hasAuthority("USER")
+                                .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/login")
                         .usernameParameter("email")

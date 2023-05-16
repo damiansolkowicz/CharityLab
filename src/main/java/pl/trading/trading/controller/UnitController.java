@@ -8,9 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import pl.trading.trading.entity.Supplier;
 import pl.trading.trading.entity.Unit;
-import pl.trading.trading.service.SupplierService;
 import pl.trading.trading.service.UnitService;
 
 import java.util.List;

@@ -12,7 +12,6 @@ import pl.trading.trading.entity.User;
 import pl.trading.trading.service.UserService;
 
 
-
 @Controller
 public class AuthController {
 
@@ -23,13 +22,13 @@ public class AuthController {
     }
 
 
-
     @GetMapping(path = "/login")
-     String login() {
+    String login() {
         return "login";
     }
+
     @GetMapping(path = "/registration")
-    public String showRegistrationForm(Model model){
+    public String showRegistrationForm(Model model) {
         UserDto user = new UserDto();
         model.addAttribute("user", user);
         return "registration";
@@ -38,7 +37,7 @@ public class AuthController {
     @PostMapping(path = "/registration")
     public String registration(@Valid @ModelAttribute("user") UserDto user,
                                BindingResult result,
-                               Model model){
+                               Model model) {
         User existing = userService.findByEmail(user.getEmail());
         if (existing != null) {
             result.rejectValue("email", null, "There is already an account registered with that email");
@@ -52,5 +51,5 @@ public class AuthController {
     }
 
 
-    }
+}
 
