@@ -13,4 +13,6 @@ public class Unit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
     private String name;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
 }

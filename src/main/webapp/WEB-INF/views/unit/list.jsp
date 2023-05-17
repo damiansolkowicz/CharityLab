@@ -17,9 +17,9 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${units}" var="unit">
+            <c:forEach items="${units}" var="unit" varStatus="loop">
             <tr>
-                <td><c:out value="${unit.id}"/></td>
+                <td><c:out value="${loop.index+1}"/></td>
                 <td><c:out value="${unit.name}"/></td>
 
                 <td><a href="<c:out value="/unit/edit?id=${unit.id}"/>">Edit</a>

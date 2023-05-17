@@ -8,7 +8,8 @@
 <section class="form-section">
     <h2>Add new supply</h2>
     <form:form method="post" modelAttribute="products" class="form-section">
-        <div>Date: <br><form:input path="localDate" type="date"/></div><br>
+        <div>Date: <br><form:input path="localDate" type="date"/></div>
+        <br>
         <div>Product Name: <form:input path="name"/></div>
         <div>Unit: <form:select path="unit" items="${units}" itemLabel="name" itemValue="id"/></div>
         <br>
@@ -21,8 +22,6 @@
         <input type="submit" value="Add products">
     </form:form>
 </section>
-
-
 </main>
 <%@ include file="/WEB-INF/footer.jsp" %>
 </html>
