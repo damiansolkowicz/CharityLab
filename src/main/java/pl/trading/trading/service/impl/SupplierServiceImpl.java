@@ -39,6 +39,11 @@ public class SupplierServiceImpl implements SupplierService {
     }
 
     @Override
+    public List<Supplier> findSupplierByUserEmail(String email) {
+        return supplierRepository.findSuppliersByUserEmail(email);
+    }
+
+    @Override
     public void deleteById(Long id) {
         supplierRepository.deleteById(id);
     }

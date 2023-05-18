@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.trading.trading.entity.Product;
 import pl.trading.trading.entity.Supplier;
 import pl.trading.trading.entity.Unit;
-import pl.trading.trading.entity.User;
 import pl.trading.trading.service.ProductsService;
 import pl.trading.trading.service.SupplierService;
 import pl.trading.trading.service.UnitService;
@@ -29,11 +28,11 @@ class ProductsController {
     private final ProductsService productsService;
     private final SupplierService supplierService;
     private final UnitService unitService;
-private final UserService userService;
+    private final UserService userService;
 
     @GetMapping(path = "/products/list")
     String showProductsList(Model model, Principal principal) {
-        String email=principal.getName();
+        String email = principal.getName();
         List<Product> product = productsService.findByUserEmail(email);
         model.addAttribute("products", product);
         return "products/list";
@@ -46,13 +45,13 @@ private final UserService userService;
     }
 
     @PostMapping(path = "/products/add")
-    String processAddProductsForm(@Valid Product product, BindingResult errors,Principal principal) {
+    String processAddProductsForm(@Valid Product product, BindingResult errors, Principal principal) {
         if (errors.hasErrors()) {
             return "products/add";
         }
         double totalPrice = product.getPrice() * product.getQuantity();
         product.setToPay(totalPrice);
-        String email=principal.getName();
+        String email = principal.getName();
         product.setUser(userService.findByEmail(email));
         productsService.save(product);
         return "redirect:/products/list";
@@ -65,7 +64,7 @@ private final UserService userService;
     }
 
     @PostMapping(path = "/products/edit")
-    String processEditProductsForm(@Valid Product product, BindingResult errors,Principal principal) {
+    String processEditProductsForm(@Valid Product product, BindingResult errors, Principal principal) {
         if (errors.hasErrors()) {
             return "products/edit";
         }

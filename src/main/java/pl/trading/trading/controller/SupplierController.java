@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import pl.trading.trading.entity.Supplier;
 import pl.trading.trading.service.SupplierService;
+import pl.trading.trading.service.UserService;
 
+import java.security.Principal;
 import java.util.List;
 
 
@@ -19,11 +21,12 @@ import java.util.List;
 class SupplierController {
 
     private final SupplierService supplierService;
-
+    private final UserService userService;
 
     @GetMapping(path = "/supplier/list")
-    String showSupplierList(Model model) {
-        List<Supplier> suppliers = supplierService.findAll();
+    String showSupplierList(Model model, Principal principal) {
+        String email = principal.getName();
+        List<Supplier> suppliers = supplierService.findSupplierByUserEmail(email);
         model.addAttribute("suppliers", suppliers);
         return "supplier/list";
     }
@@ -35,11 +38,13 @@ class SupplierController {
     }
 
     @PostMapping(path = "/supplier/add")
-    String processAddSupplierForm(@Valid Supplier supplier, BindingResult errors) {
+    String processAddSupplierForm(@Valid Supplier supplier, BindingResult errors, Principal principal) {
 
         if (errors.hasErrors()) {
             return "supplier/add";
         }
+        String email = principal.getName();
+        supplier.setUser(userService.findByEmail(email));
         supplierService.save(supplier);
 
         return "redirect:/supplier/list";
@@ -52,12 +57,13 @@ class SupplierController {
     }
 
     @PostMapping(path = "/supplier/edit")
-    String processEditSupplierForm(@Valid Supplier supplier, BindingResult errors) {
+    String processEditSupplierForm(@Valid Supplier supplier, BindingResult errors, Principal principal) {
 
         if (errors.hasErrors()) {
             return "supplier/edit";
         }
 
+        supplier.setUser(userService.findByEmail(principal.getName()));
         supplierService.update(supplier);
 
         return "redirect:/supplier/list";
