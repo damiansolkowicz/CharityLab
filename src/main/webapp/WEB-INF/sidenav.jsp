@@ -6,11 +6,12 @@
 <main>
     <nav class="side-menu">
         <ul>
-            <li><a href="/supplier/list">Lista Dostawców</a></li>
-            <li><a href="/products/list">Lista Dostaw</a></li>
-            <li><a href="/supplier/add">Dodaj Dostawcę</a></li>
-            <li><a href="/products/add">Dodaj Dostawę</a></li>
-     <hr>
-            <li><a href="/unit/list">Zarządzaj jednostkami</a></li>
+            <li><a href="/supplier/list">Suppliers List</a></li>
+            <li><a href="/products/list">Deliveries List</a></li>
+            <li><a href="/supplier/add">Add Supplier</a></li>
+            <li><a href="/products/add">Add Delivery</a></li>
+            <hr>
+            <li><a href="/unit/list">Manage Your Units</a></li>
         </ul>
     </nav>
+</main>

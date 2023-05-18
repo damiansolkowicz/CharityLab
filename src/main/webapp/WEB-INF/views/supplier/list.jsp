@@ -21,18 +21,18 @@
             </thead>
             <tbody>
             <c:forEach items="${suppliers}" var="supplier">
-            <tr>
-                <td><c:out value="${supplier.name}"/></td>
-                <td><c:out value="${supplier.surname}"/></td>
-                <td><c:out value="${supplier.city}"/></td>
-                <td><c:out value="${supplier.email}"/></td>
-                <td><c:out value="${supplier.pesel}"/></td>
-                <td><a href="<c:out value="edit?id=${supplier.id}"/>">Edit</a>
-                    <a href="<c:out value="delete?id=${supplier.id}"/>">Delete</a>
-                    <a href="<c:out value="supplies?supplierId=${supplier.id}"/>">All supplies</a>
-                </td>
-            </tr>
-           </c:forEach>
+                <tr>
+                    <td><c:out value="${supplier.name}"/></td>
+                    <td><c:out value="${supplier.surname}"/></td>
+                    <td><c:out value="${supplier.city}"/></td>
+                    <td><c:out value="${supplier.email}"/></td>
+                    <td><c:out value="${supplier.pesel}"/></td>
+                    <td><a href="<c:out value="edit?id=${supplier.id}"/>">Edit</a>
+                        <a href="<c:out value="delete?id=${supplier.id}"/>">Delete</a>
+                        <a href="<c:out value="supplies?supplierId=${supplier.id}"/>">All supplies</a>
+                    </td>
+                </tr>
+            </c:forEach>
 
             </tbody>
         </table>

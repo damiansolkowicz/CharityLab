@@ -9,11 +9,8 @@
     <section class="content">
         <h2>Add unit:</h2>
         <form:form method="post" modelAttribute="unit" class="form-section">
-
         <div>Name: <form:input path="name"/></div>
         <input type="submit" value="Add new unit">
         </form:form>
-
-
 </main>
 <%@ include file="/WEB-INF/footer.jsp" %>

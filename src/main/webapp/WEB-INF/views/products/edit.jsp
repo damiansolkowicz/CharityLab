@@ -5,7 +5,7 @@
 <%@ include file="/WEB-INF/header.jsp" %>
 <%@ include file="/WEB-INF/sidenav.jsp" %>
 <section class="content">
-    <h2>Edit supply</h2>
+    <h2>Edit delivery</h2>
     <form:form method="post" modelAttribute="products" class="form-section">
         <div>Date: <form:input path="localDate" type="date"/></div>
         <div>Product Name: <form:input path="name"/></div>
@@ -17,7 +17,7 @@
                                          itemValue="id"/></div>
         <br>
         <form:hidden path="id"/>
-        <input type="submit" value="Add products">
+        <input type="submit" value="Add delivery">
     </form:form>
 
 

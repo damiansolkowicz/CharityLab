@@ -77,8 +77,4 @@ class UnitController {
         return "redirect:/unit/list";
     }
 
-    @ModelAttribute("users")
-    List<UserDto> users() {
-        return userService.findAllUsers();
-    }
 }

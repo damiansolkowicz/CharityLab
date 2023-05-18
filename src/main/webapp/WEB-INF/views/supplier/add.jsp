@@ -7,9 +7,8 @@
 <main>
     <%@ include file="/WEB-INF/sidenav.jsp" %>
     <section class="content">
-        <h2>Dodaj nowego dostawcę:</h2>
+        <h2>Add Supplier:</h2>
         <form:form method="post" modelAttribute="supplier" class="form-section">
-
         <div>Name: <form:input path="name"/></div>
         <div>Surname: <form:input path="surname"/></div>
         <div>City: <form:input path="city"/></div>
@@ -17,8 +16,6 @@
         <div>Pesel: <form:input path="pesel"/></div>
         <input type="submit" value="Add supplier">
         </form:form>
-
-
 
 
 </main>

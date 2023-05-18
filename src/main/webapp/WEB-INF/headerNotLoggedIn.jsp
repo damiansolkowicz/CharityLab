@@ -1,11 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Nazwa Firmy</title>
+    <title>Trading Manager</title>
     <style>
 
         body {
@@ -158,6 +162,7 @@
         }
 
         form input[type="text"],
+        form input[type="password"],
         form input[type="email"]
         form input[type="mail"] {
             width: 90%;
@@ -185,18 +190,3 @@
 
     </style>
 </head>
-<body>
-<header>
-    <h1>Dashboard</h1>
-    <nav class="top-menu">
-        <ul>
-            <li><a href="/index">Main Page</a></li>
-            <li><a href="/logout">Log out</a></li>
-        </ul>
-    </nav>
-</header>
-<footer>
-    <p>&copy; 2023</p>
-</footer>
-</body>
-</html>

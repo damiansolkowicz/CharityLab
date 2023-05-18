@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Email;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.checkerframework.common.aliasing.qual.Unique;
 import org.hibernate.validator.constraints.pl.PESEL;
 
 
@@ -22,6 +23,7 @@ public class Supplier {
     private String city;
     @Email
     private String email;
+    @Unique
     @PESEL
     private String pesel;
 
