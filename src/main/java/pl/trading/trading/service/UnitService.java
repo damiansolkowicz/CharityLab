@@ -15,6 +15,6 @@ public interface UnitService {
     Unit findById(Long id);
 
     List<Unit> findAll();
-
+    List<Unit> findByUserEmail(String email);
     void deleteById(Long id);
 }

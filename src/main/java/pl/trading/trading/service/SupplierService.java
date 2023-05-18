@@ -14,6 +14,7 @@ public interface SupplierService {
     Supplier findById(Long id);
 
     List<Supplier> findAll();
+    List<Supplier> findSupplierByUserEmail(String email);
 
     void deleteById(Long id);
 }

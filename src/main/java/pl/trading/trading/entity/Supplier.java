@@ -29,4 +29,6 @@ public class Supplier {
         return name + " " + surname;
     }
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
 }
