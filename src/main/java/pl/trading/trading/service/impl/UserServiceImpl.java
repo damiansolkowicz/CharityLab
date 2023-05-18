@@ -10,8 +10,6 @@ import pl.trading.trading.repository.UserRepository;
 import pl.trading.trading.service.UserService;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -36,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         Role role = roleRepository.findByName("USER");
-        if(role == null){
+        if (role == null) {
             role = checkRoleExist();
         }
         user.setRoles(Arrays.asList(role));
@@ -48,14 +46,8 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByEmail(email);
     }
 
-    @Override
-    public List<UserDto> findAllUsers() {
-        List<User> users = userRepository.findAll();
-        return users.stream().map((user) -> convertEntityToDto(user))
-                .collect(Collectors.toList());
-    }
 
-    private UserDto convertEntityToDto(User user){
+    private UserDto convertEntityToDto(User user) {
         UserDto userDto = new UserDto();
         String[] name = user.getName().split(" ");
         userDto.setFirstName(name[0]);

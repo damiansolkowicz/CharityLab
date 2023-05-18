@@ -19,7 +19,6 @@
             background-color: #f9f9f9;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         }
-
         .container {
             display: flex;
             flex-direction: column;
@@ -27,13 +26,11 @@
             align-items: center;
             height: 100vh;
         }
-
         h1 {
             font-size: 36px;
             margin-bottom: 50px;
             text-align: center;
         }
-
         a {
             display: block;
             width: 300px;
@@ -46,11 +43,9 @@
             background-color: #333;
             transition: background-color 0.3s ease;
         }
-
         a:hover {
             background-color: #666;
         }
-
     </style>
 </head>
 <body>
@@ -62,5 +57,4 @@
 </div>
 </body>
 </html>
-
 <%@ include file="/WEB-INF/footer.jsp" %>

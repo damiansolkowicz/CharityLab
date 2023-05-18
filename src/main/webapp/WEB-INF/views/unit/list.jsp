@@ -18,21 +18,18 @@
             </thead>
             <tbody>
             <c:forEach items="${units}" var="unit" varStatus="loop">
-            <tr>
-                <td><c:out value="${loop.index+1}"/></td>
-                <td><c:out value="${unit.name}"/></td>
-
-                <td><a href="<c:out value="/unit/edit?id=${unit.id}"/>">Edit</a>
-                    <a href="<c:out value="/unit/delete?id=${unit.id}"/>">Delete</a>
-                </td>
-            </tr>
-           </c:forEach>
+                <tr>
+                    <td><c:out value="${loop.index+1}"/></td>
+                    <td><c:out value="${unit.name}"/></td>
+                    <td><a href="<c:out value="/unit/edit?id=${unit.id}"/>">Edit</a>
+                        <a href="<c:out value="/unit/delete?id=${unit.id}"/>">Delete</a>
+                    </td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
-
         <div class="button-section">
-
-            <button> <a href="/unit/add">Dodaj jednostkę</a></button>
+            <button><a href="/unit/add">Add unit</a></button>
         </div>
     </section>
 </main>

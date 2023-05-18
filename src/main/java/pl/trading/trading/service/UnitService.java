@@ -1,7 +1,6 @@
 package pl.trading.trading.service;
 
 
-import pl.trading.trading.entity.Product;
 import pl.trading.trading.entity.Unit;
 
 import java.util.List;
@@ -15,6 +14,8 @@ public interface UnitService {
     Unit findById(Long id);
 
     List<Unit> findAll();
+
     List<Unit> findByUserEmail(String email);
+
     void deleteById(Long id);
 }

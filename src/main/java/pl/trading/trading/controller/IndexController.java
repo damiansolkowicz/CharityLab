@@ -18,7 +18,7 @@ public class IndexController {
 
     @GetMapping(path = "/index")
     public String index(Principal principal, Model model) {
-        String email=principal.getName();
+        String email = principal.getName();
         List<Product> product = productsService.findByUserEmail(email);
         model.addAttribute("name", email);
         model.addAttribute("products", product);

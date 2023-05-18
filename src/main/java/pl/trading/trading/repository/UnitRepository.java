@@ -5,6 +5,6 @@ import pl.trading.trading.entity.Unit;
 
 import java.util.List;
 
-public interface UnitRepository extends JpaRepository<Unit,Long> {
-    List <Unit>findUnitsByUserEmail(String email);
+public interface UnitRepository extends JpaRepository<Unit, Long> {
+    List<Unit> findUnitsByUserEmail(String email);
 }

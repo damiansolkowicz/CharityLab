@@ -6,7 +6,7 @@
 
 <%@ include file="/WEB-INF/sidenav.jsp" %>
 <section class="form-section">
-    <h2>Add new supply</h2>
+    <h2>Add new delivery</h2>
     <form:form method="post" modelAttribute="products" class="form-section">
         <div>Date: <br><form:input path="localDate" type="date"/></div>
         <br>

@@ -5,7 +5,7 @@
 <%@ include file="/WEB-INF/sidenav.jsp" %>
 <section class="content">
     <c:set var="firstProduct" value="${products[0]}"/>
-    <h2>All supplies for <c:out value="${firstProduct.supplier.fullName}"/></h2>
+    <h2>All deliveries for <c:out value="${firstProduct.supplier.fullName}"/></h2>
     <table>
         <table>
             <thead>
