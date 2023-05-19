@@ -4,9 +4,9 @@
 <%@ include file="/WEB-INF/header.jsp" %>
 <%@ include file="/WEB-INF/sidenav.jsp" %>
 <section class="content">
-    <h1>Jesteś zalogowany jako ${name}</h1>
+    <h1>You are logged in as ${name}</h1>
     <hr>
-    <h2>Ostatnio zakupione produkty:</h2>
+    <h2>Latest supplies:</h2>
     <table>
         <table>
             <thead>
