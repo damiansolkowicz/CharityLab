@@ -50,10 +50,10 @@
 </head>
 <body>
 <div class="container">
-    <h1>Witaj na Menadżerze Dostaw</h1>
-    <a href="/login">Zaloguj</a>
-    <a href="/registration">Zarejestruj</a>
-    <a href="/pesel">Wyszukaj po PESEL</a>
+    <h1>Supplier Manager</h1>
+    <a href="/login">Log in</a>
+    <a href="/registration">Register</a>
+    <a href="/pesel">Find by PESEL number</a>
 </div>
 </body>
 </html>
