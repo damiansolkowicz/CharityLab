@@ -17,6 +17,7 @@ import pl.trading.trading.service.SupplierService;
 import pl.trading.trading.service.UnitService;
 import pl.trading.trading.service.UserService;
 
+import java.math.BigDecimal;
 import java.security.Principal;
 import java.util.List;
 
@@ -49,7 +50,7 @@ class ProductsController {
         if (errors.hasErrors()) {
             return "products/add";
         }
-        double totalPrice = product.getPrice() * product.getQuantity();
+        BigDecimal totalPrice = new BigDecimal(product.getPrice()).multiply(new BigDecimal(product.getQuantity()));
         product.setToPay(totalPrice);
         String email = principal.getName();
         product.setUser(userService.findByEmail(email));

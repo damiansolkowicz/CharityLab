@@ -9,7 +9,7 @@
     <form:form method="post" modelAttribute="products" class="form-section">
         <div>Date: <form:input path="localDate" type="date"/></div>
         <div>Product Name: <form:input path="name"/></div>
-        <div>Unit: <form:select path="unit" items="${units}" itemLabel="name" itemValue="id"/></div>
+        <div>Unit: <form:select path="unit" items="${units}" itemLabel="abbreviation" itemValue="id"/></div>
         <br>
         <div>Price: <form:input path="price"/></div>
         <div>Quantity: <form:input path="quantity"/></div>

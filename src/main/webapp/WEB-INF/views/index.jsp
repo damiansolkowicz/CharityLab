@@ -26,7 +26,7 @@
                     <td><c:out value="${product.supplier.surname}"/></td>
                     <td><c:out value="${product.name}"/></td>
                     <td><c:out value="${product.price}"/></td>
-                    <td><c:out value="${product.unit.name}"/></td>
+                    <td><c:out value="${product.unit.abbreviation}"/></td>
                     <td><a href="<c:out value="products/edit?id=${product.id}"/>">Edit</a>
                         <a href="<c:out value="products/delete?id=${product.id}"/>">Delete</a>
                     </td>

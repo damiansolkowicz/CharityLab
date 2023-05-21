@@ -12,7 +12,8 @@
             <thead>
             <tr>
                 <th>Lp.</th>
-                <th>Name</th>
+                <th>Full Name</th>
+                <th>Abbreviation</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -20,7 +21,8 @@
             <c:forEach items="${units}" var="unit" varStatus="loop">
                 <tr>
                     <td><c:out value="${loop.index+1}"/></td>
-                    <td><c:out value="${unit.name}"/></td>
+                    <td><c:out value="${unit.fullName}"/></td>
+                    <td><c:out value="${unit.abbreviation}"/></td>
                     <td><a href="<c:out value="/unit/edit?id=${unit.id}"/>">Edit</a>
                         <a href="<c:out value="/unit/delete?id=${unit.id}"/>">Delete</a>
                     </td>

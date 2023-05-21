@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 
@@ -19,7 +20,7 @@ public class Product {
     private String name;
     private double price;
     private double quantity;
-    private double toPay;
+    private BigDecimal toPay;
     private LocalDate localDate;
     @ManyToOne
     private Unit unit;

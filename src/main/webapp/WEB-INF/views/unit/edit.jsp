@@ -8,7 +8,8 @@
 <section class="content">
     <h2>Edit Supplier</h2>
     <form:form method="post" modelAttribute="unit" class="form-section">
-        <div>Name: <form:input path="name"/></div>
+        <div>Full Name: <form:input path="fullName"/></div>
+        <div>Abbreviation: <form:input path="abbreviation"/></div>
         <form:hidden path="id"/>
         <input type="submit" value="Change unit">
     </form:form>
