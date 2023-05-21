@@ -18,8 +18,8 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private double price;
-    private double quantity;
+    private BigDecimal price;
+    private BigDecimal quantity;
     private BigDecimal toPay;
     private LocalDate localDate;
     @ManyToOne

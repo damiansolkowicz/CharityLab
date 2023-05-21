@@ -18,6 +18,7 @@ import pl.trading.trading.service.UnitService;
 import pl.trading.trading.service.UserService;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.security.Principal;
 import java.util.List;
 
@@ -50,8 +51,8 @@ class ProductsController {
         if (errors.hasErrors()) {
             return "products/add";
         }
-        BigDecimal totalPrice = new BigDecimal(product.getPrice()).multiply(new BigDecimal(product.getQuantity()));
-        product.setToPay(totalPrice);
+        BigDecimal totalPrice = product.getQuantity().multiply(product.getPrice()); /*new BigDecimal(product.getPrice()).multiply(new BigDecimal(product.getQuantity()));*/
+        product.setToPay(totalPrice.setScale(2, RoundingMode.HALF_UP));
         String email = principal.getName();
         product.setUser(userService.findByEmail(email));
         productsService.save(product);
