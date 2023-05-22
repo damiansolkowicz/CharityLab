@@ -24,7 +24,7 @@
                 <tr>
                     <td><c:out value="${supplier.name}"/></td>
                     <td><c:out value="${supplier.surname}"/></td>
-                    <td><c:out value="${supplier.city}"/></td>
+                    <td><c:out value="${supplier.fullAddress}"/></td>
                     <td><c:out value="${supplier.email}"/></td>
                     <td><c:out value="${supplier.pesel}"/></td>
                     <td><a href="<c:out value="edit?id=${supplier.id}"/>">Edit</a>
@@ -36,8 +36,7 @@
 
             </tbody>
         </table>
-
-
     </section>
 </main>
+<br>
 <%@ include file="/WEB-INF/footer.jsp" %>

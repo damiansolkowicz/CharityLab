@@ -2,6 +2,7 @@ package pl.trading.trading.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -21,6 +22,11 @@ public class Supplier {
     private String name;
     private String surname;
     private String city;
+    private String street;
+    private String flatNumber;
+    private String postCode;
+    @Min(9)
+    private String phoneNumber;
     @Email
     private String email;
     @Unique
@@ -30,6 +36,8 @@ public class Supplier {
     public String getFullName() {
         return name + " " + surname;
     }
+
+    public String getFullAddress() {return street + " " + flatNumber + " " + postCode + " " + city;}
 
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
