@@ -1,42 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="/WEB-INF/header.jsp" %>
-<%@ include file="/WEB-INF/sidenav.jsp" %>
-<section class="content">
-    <h1>You are logged in as ${name}</h1>
-    <hr>
-    <h2>Latest supplies:</h2>
-    <table>
-        <table>
-            <thead>
-            <tr>
-                <th>Supplier Name</th>
-                <th>Supplier Surname</th>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Unit</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${products}" var="product" end="9">
-                <tr>
-                    <td><c:out value="${product.supplier.name}"/></td>
-                    <td><c:out value="${product.supplier.surname}"/></td>
-                    <td><c:out value="${product.name}"/></td>
-                    <td><c:out value="${product.price}"/></td>
-                    <td><c:out value="${product.unit.abbreviation}"/></td>
-                    <td><a href="<c:out value="products/edit?id=${product.id}"/>">Edit</a>
-                        <a href="<c:out value="products/delete?id=${product.id}"/>">Delete</a>
-                    </td>
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
-        <div class="button-section">
-            <button><a href="/products/add">Add supply</a></button>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ include file="header.jsp" %>
+
+<section class="stats">
+    <div class="container container--85">
+        <div class="stats--item">
+            <em>"${bagsQuantity}"</em>
+
+            <h3>Oddanych worków</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius est beatae, quod accusamus illum
+                tempora!</p>
         </div>
+
+        <div class="stats--item">
+            <em>${donationsQuantity}</em>
+            <h3>Przekazanych darów</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas
+                quam.</p>
+        </div>
+
+    </div>
 </section>
-</main>
-<%@ include file="/WEB-INF/footer.jsp" %>
+
+<section class="steps">
+    <h2>Wystarczą 4 proste kroki</h2>
+
+    <div class="steps--container">
+        <div class="steps--item">
+            <span class="icon icon--hands"></span>
+            <h3>Wybierz rzeczy</h3>
+            <p>ubrania, zabawki, sprzęt i inne</p>
+        </div>
+        <div class="steps--item">
+            <span class="icon icon--arrow"></span>
+            <h3>Spakuj je</h3>
+            <p>skorzystaj z worków na śmieci</p>
+        </div>
+        <div class="steps--item">
+            <span class="icon icon--glasses"></span>
+            <h3>Zdecyduj komu chcesz pomóc</h3>
+            <p>wybierz zaufane miejsce</p>
+        </div>
+        <div class="steps--item">
+            <span class="icon icon--courier"></span>
+            <h3>Zamów kuriera</h3>
+            <p>kurier przyjedzie w dogodnym terminie</p>
+        </div>
+    </div>
+
+    <a href="#" class="btn btn--large">Załóż konto</a>
+</section>
+
+<section class="about-us">
+    <div class="about-us--text">
+        <h2>O nas</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt libero
+            optio esse quisquam illo omnis.</p>
+        <img src="<c:url value="resources/images/signature.svg"/>" class="about-us--text-signature" alt="Signature"/>
+    </div>
+    <div class="about-us--image"><img src="<c:url value="resources/images/about-us.jpg"/>" alt="People in circle"/>
+    </div>
+</section>
+
+<section class="help">
+    <h2>Komu pomagamy?</h2>
+
+    <!-- SLIDE 1 -->
+    <div class="help--slides active" data-id="1">
+        <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy.
+            Możesz sprawdzić czym się zajmują.</p>
+            <ul class="help--slides-items">
+                <c:forEach items="${institutions}" var="institution" varStatus="loop">
+                    <c:if test="${loop.index % 2 == 0}">
+                        <li>
+                    </c:if>
+
+                    <div class="col">
+                        <div class="title">${institution.name}</div>
+                        <div class="subtitle">${institution.description}</div>
+                    </div>
+
+                    <c:if test="${loop.index % 2 != 0 or loop.last}">
+                        </li>
+                    </c:if>
+                </c:forEach>
+            </ul>
+
+
+        </ul>
+    </div>
+
+</section>
+
+<%@ include file="footer.jsp" %>
+
+<script src="<c:url value="/js/app.js"/>"></script>
+</body>
+</html>

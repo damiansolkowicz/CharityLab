@@ -12,8 +12,8 @@
 	<artifactId>trading</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>trading</name>
-	<description>trading</description>
+	<name>charity</name>
+	<description>charity</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
