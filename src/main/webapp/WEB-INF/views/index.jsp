@@ -3,11 +3,11 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="header.jsp" %>
-
+<script src="<c:url value="resources/js/app.js"/>"></script>
 <section class="stats">
     <div class="container container--85">
         <div class="stats--item">
-            <em>"${bagsQuantity}"</em>
+            <em>${bagsQuantity}</em>
 
             <h3>Oddanych worków</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius est beatae, quod accusamus illum
@@ -96,6 +96,6 @@
 
 <%@ include file="footer.jsp" %>
 
-<script src="<c:url value="/js/app.js"/>"></script>
+<script src="<c:url value="resources/js/app.js"/>"></script>
 </body>
 </html>
