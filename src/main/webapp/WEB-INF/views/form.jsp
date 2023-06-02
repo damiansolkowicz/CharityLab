@@ -5,24 +5,25 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ include file="header.jsp" %>
 <section>
+<section>
 <form:form method="post" modelAttribute="donation" class="form-section">
-<form:checkboxes path="category"
-                 items="${categories}" itemLabel="name" itemValue="id"/>
-<form:select path="institution" items="${institutions}" itemLabel="name" itemValue="id"/>
+    <form:checkboxes path="category"
+                     items="${categories}" itemLabel="name" itemValue="id"/>
+    <form:select path="institution" items="${institutions}" itemLabel="name" itemValue="id"/>
 
-<form:input path="zipCode" />
-<form:input path="street" />
-<form:input path="city"/>
-<form:input path="quantity"/>
-<form:textarea path="pickUpComment"/>
-<form:input type="date" path="pickUpDate"/>
-<form:input type="time" path="pickUpTime" />
-</section>
+    <form:input path="zipCode" />
+    <form:input path="street" />
+    <form:input path="city"/>
+    <form:input path="quantity"/>
+    <form:textarea path="pickUpComment"/>
+    <form:input type="date" path="pickUpDate"/>
+    <form:input type="time" path="pickUpTime" />
+    </section>
 
 
     <input type="submit" value="Wyślij">
-</body>
-</html>
+    </body>
+    </html>
 </form:form>
+</section>
 <%@ include file="footer.jsp" %>
-<script src="<c:url value="resources/js/app.js"/>"></script>

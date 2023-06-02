@@ -30,7 +30,7 @@ public class DonationController {
     @PostMapping(path = "/donation")
     public String donationProcessForm(@Valid Donation donation){
         donationService.save(donation);
-        return "redirect:/";
+        return "header-confirmation";
     }
     @ModelAttribute(name = "categories")
     public List<Category> categoriesList(){
