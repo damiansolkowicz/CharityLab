@@ -32,7 +32,7 @@ public class InstitutionController {
         return  "institutionsAdd";
     }
     @PostMapping(path = "institutions/add")
-    String processAddSupplierForm(@Valid Institution institution, BindingResult errors, Principal principal) {
+    String processAddSupplierForm(@Valid Institution institution, BindingResult errors) {
 
         if (errors.hasErrors()) {
             return "institutionsAdd";
