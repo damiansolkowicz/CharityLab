@@ -39,7 +39,7 @@ public class InstitutionController {
         }
       institutionService.save(institution);
 
-        return "redirect:/institutions/list";
+        return "redirect:institutions/list";
     }
     @GetMapping(path = "/institutions/delete")
     String deleteInstitutions(@RequestParam long id) {
