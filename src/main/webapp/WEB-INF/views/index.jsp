@@ -35,7 +35,7 @@
         <div class="steps--item">
             <span class="icon icon--arrow"></span>
             <h3>Spakuj je</h3>
-            <p>skorzystaj z worków na śmieci</p>
+            <p>Skorzystaj z worków na śmieci</p>
         </div>
         <div class="steps--item">
             <span class="icon icon--glasses"></span>
@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <a href="#" class="btn btn--large">Załóż konto</a>
+    <a href="/registration" class="btn btn--large">Załóż konto</a>
 </section>
 
 <section class="about-us">

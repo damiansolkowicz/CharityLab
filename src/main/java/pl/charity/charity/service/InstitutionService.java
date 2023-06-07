@@ -1,5 +1,6 @@
 package pl.charity.charity.service;
 
+import jakarta.persistence.criteria.CriteriaBuilder;
 import pl.charity.charity.entity.Institution;
 
 import java.util.List;
@@ -10,4 +11,5 @@ public interface InstitutionService {
     Institution findById(Long id);
     List<Institution> findAll();
     void deleteById(Long id);
+
 }

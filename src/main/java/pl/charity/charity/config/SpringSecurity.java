@@ -29,6 +29,7 @@ public class SpringSecurity {
         httpSecurity.authorizeHttpRequests(authorization ->
                         authorization.shouldFilterAllDispatcherTypes(false)
                                 .requestMatchers(HttpMethod.GET, "/", "/login", "/registration").permitAll()
+                                .requestMatchers("/resources/**").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/registration").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/**").hasAuthority("USER")
                                 .requestMatchers(HttpMethod.POST, "/**").hasAuthority("USER")
