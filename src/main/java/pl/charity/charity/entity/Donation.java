@@ -31,6 +31,9 @@ public class Donation {
     private List<Category> category;
     @ManyToOne
     private Institution institution;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     private String street;
     private String city;
     private String zipCode;

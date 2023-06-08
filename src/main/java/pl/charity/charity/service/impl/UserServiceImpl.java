@@ -28,15 +28,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void saveUser(UserDto userDto) {
+    public void saveUser(UserDto userDto, String roleName) {
         User user = new User();
         user.setName(userDto.getFirstName() + " " + userDto.getLastName());
         user.setEmail(userDto.getEmail());
 
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-        Role role = roleRepository.findByName("USER");
+        Role role = roleRepository.findByName(roleName);
         if (role == null) {
-            role = checkRoleExist();
+            role = checkRoleExist(roleName);
         }
         user.setRoles(Arrays.asList(role));
         userRepository.save(user);
@@ -45,6 +45,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
+    }
+
+    @Override
+    public void update(User user) {
+        userRepository.save(user);
     }
 
 
@@ -57,9 +62,9 @@ public class UserServiceImpl implements UserService {
         return userDto;
     }
 
-    private Role checkRoleExist() {
+    private Role checkRoleExist(String roleName) {
         Role role = new Role();
-        role.setName("USER");
+        role.setName(roleName);
         return roleRepository.save(role);
     }
 }

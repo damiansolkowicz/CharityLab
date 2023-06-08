@@ -39,12 +39,12 @@ public class InstitutionController {
         }
       institutionService.save(institution);
 
-        return "redirect:institutions/list";
+        return "redirect:list";
     }
     @GetMapping(path = "/institutions/delete")
     String deleteInstitutions(@RequestParam long id) {
         institutionService.deleteById(id);
-        return "redirect:institutions/list";
+        return "redirect:list";
     }
     @GetMapping(path = "/institutions/edit")
     String showEditSupplierForm(@RequestParam Long id, Model model) {

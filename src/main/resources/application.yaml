@@ -17,7 +17,7 @@ spring:
     password: root
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
 #   https://www.baeldung.com/hibernate-field-naming-spring-boot
 #      naming:
 #        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl

@@ -13,4 +13,8 @@ public interface DonationService {
     void deleteById(Long id);
     Integer countBagsQuantity();
     Integer countDonationsQuantity();
+
+    List<Donation> findDontationByUserEmail(String email);
+
+    List<Donation> findByUserEmail(String email);
 }

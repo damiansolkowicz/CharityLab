@@ -51,4 +51,14 @@ donationRepository.deleteById(id);
     public Integer countDonationsQuantity() {
         return donationRepository.countDonationsQuantity();
     }
+
+    @Override
+    public List<Donation> findDontationByUserEmail(String email) {
+        return donationRepository.findDonationsByUserEmail(email);
+    }
+
+    @Override
+    public List<Donation> findByUserEmail(String email) {
+        return donationRepository.findDonationsByUserEmail(email);
+    }
 }
