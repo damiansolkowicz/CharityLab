@@ -1,12 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Panel Administratora</title>
     <style>
         body {
@@ -58,6 +57,7 @@
             margin-right: 5px;
         }
     </style>
+
 </head>
 <body>
 <div id="navbar">
@@ -69,19 +69,19 @@
     <a href="/logout">Wyloguj</a>
 </div>
 <section>
-        <h1>Lista organizacji</h1>
+    <h1>Lista adminów</h1>
     <table>
         <tr>
             <th>Nazwa</th>
             <th>Opis</th>
             <th>Akcja</th>
         </tr>
-        <c:forEach items="${institutions}" var="institution">
+        <c:forEach items="${admins}" var="admin">
             <tr>
-                <td>${institution.name}</td>
-                <td>${institution.description}</td>
-                <td><a href="<c:out value="edit?id=${institution.id}"/>">Edit</a>
-                    <a href="<c:out value="delete?id=${institution.id}"/>">Delete</a>
+                <td><c:out value="${admin.name}" /></td>
+                <td><c:out value="${admin.email}" /></td>
+                <td>
+                    <a href="<c:out value='deleteAdmin?id=${admin.id}' />">Delete</a>
                 </td>
             </tr>
         </c:forEach>
@@ -89,7 +89,3 @@
 </section>
 </body>
 </html>
-
-
-
-

@@ -57,34 +57,57 @@
         .user-email {
             color: #888;
         }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tile {
+            width: 200px;
+            height: 150px;
+            background-color: lightblue;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .tile:hover {
+            background-color: gray;
+        }
+
+        .tile h3 {
+            color: white;
+        }
+
+        .tile p {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
 <div id="navbar">
     <a href="/institutions/list">Lista Organizacji</a>
-    <a href="#">Lista Użytkowników</a>
-    <a href="#">Lista Administratorów</a>
+    <a href="/admin/listUsers">Lista Użytkowników</a>
+    <a href="/admin/listAdmins">Lista Administratorów</a>
     <a href="/admin/add">Dodaj Administratora</a>
     <a href="/logout">Wyloguj</a>
 </div>
-<%--<section>
-    <h1>Lista urzytkowników</h1>
-    <table>
-        <tr>
-            <th>Nazwa</th>
+<section>
+    <div class="container">
+        <div class="tile">
+            <h3>Zarejestrowani użytkownicy</h3>
+            <p id="userCount">${regularUsersQuantity}</p>
+        </div>
+        <div class="tile">
+            <h3>Zarejestrowani administratorzy</h3>
+            <p id="adminCount">${adminsQuantity}</p>
+        </div>
+    </div>
 
-    </table>        <th>Opis</th>
-    <th>Akcja</th>
-    </tr>
-    <c:forEach items="${institutions}" var="institution">
-        <tr>
-            <td>${institution.name}</td>
-            <td>${institution.description}</td>
-            <td><a href="<c:out value="edit?id=${institution.id}"/>">Edit</a>
-                <a href="<c:out value="delete?id=${institution.id}"/>">Delete</a>
-            </td>
-        </tr>
-    </c:forEach>
-</section>--%>
+</section>
 </body>
 </html>

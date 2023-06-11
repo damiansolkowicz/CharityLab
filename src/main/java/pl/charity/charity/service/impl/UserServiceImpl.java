@@ -1,5 +1,6 @@
 package pl.charity.charity.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.charity.charity.dto.UserDto;
@@ -11,7 +12,9 @@ import pl.charity.charity.service.UserService;
 
 
 import java.util.Arrays;
+import java.util.List;
 
+@Slf4j
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -29,6 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(UserDto userDto, String roleName) {
+        log.info("Zapisuje usera");
         User user = new User();
         user.setName(userDto.getFirstName() + " " + userDto.getLastName());
         user.setEmail(userDto.getEmail());
@@ -48,10 +52,27 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> findAllByRoles(Role roles) {
+       return userRepository.findAllByRoles(roles);
+    }
+
+    @Override
+    public User findByRoles(String roles) {
+        return null;
+    }
+
+    @Override
     public void update(User user) {
         userRepository.save(user);
     }
 
+    @Override
+    public Integer countAdminUsers() {
+        return userRepository.countAdminUsers();
+    }
+    public  Integer countRegularUsers(){
+        return  userRepository.countRegularUsers();
+    }
 
     private UserDto convertEntityToDto(User user) {
         UserDto userDto = new UserDto();
@@ -67,4 +88,6 @@ public class UserServiceImpl implements UserService {
         role.setName(roleName);
         return roleRepository.save(role);
     }
+
+
 }

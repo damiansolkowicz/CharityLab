@@ -26,6 +26,8 @@ public class UserController {
    private final PasswordEncoder passwordEncoder;
     @GetMapping(path = "/adminPage")
     public String adminPage(Model model) {
+        model.addAttribute("adminsQuantity", userService.countAdminUsers());
+        model.addAttribute("regularUsersQuantity", userService.countRegularUsers());
         return "adminPage";
     }
     @GetMapping(path = "user/edit")
@@ -59,4 +61,5 @@ public class UserController {
 
         return "redirect:/donation";
     }
+
 }

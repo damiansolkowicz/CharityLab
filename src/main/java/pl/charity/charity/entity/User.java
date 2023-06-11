@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,10 @@ import java.util.List;
 @Table(name = "users")
 public class User {
     private static final long serialVersionUID = 1L;
+    @PreRemove
+    private void preRemove() {
+        roles.clear();
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
