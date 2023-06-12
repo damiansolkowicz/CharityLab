@@ -18,7 +18,6 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 public class User {
-    private static final long serialVersionUID = 1L;
     @PreRemove
     private void preRemove() {
         roles.clear();

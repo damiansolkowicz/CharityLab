@@ -43,7 +43,7 @@ public class DonationController {
         return "header-confirmation";
     }
 
-    @GetMapping(path="user/donationslList")
+    @GetMapping(path="user/donationsList")
     String showDonationsList(Model model,Principal principal){
         String email=principal.getName();
         List<Donation> donations=donationService.findDontationByUserEmail(email);
@@ -66,12 +66,12 @@ public class DonationController {
         donation.setUser(userService.findByEmail(principal.getName()));
         donationService.update(donation);
 
-        return "redirect:/user/donationslList";
+        return "redirect:/user/donationsList";
     }
     @GetMapping(path = "user/donationDelete")
     String deleteProducts(@RequestParam long id) {
         donationService.deleteById(id);
-        return "redirect:/user/donationslList";
+        return "redirect:/user/donationsList";
     }
 
     @ModelAttribute(name = "categories")
