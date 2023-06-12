@@ -15,9 +15,8 @@
                 <td>${donation.quantity}</td>
                 <td>${donation.institution.name}</td>
                 <td>${donation.pickUpDate}</td>
-                <td><%--<a href="<c:out value="edit?id=${.id}"/>">Edit</a>
-                    <a href="<c:out value="delete?id=${institution.id}"/>">Delete</a>
-                    <a href="<c:out value="details?id=${institution.id}"/>">Delete</a>--%>
+                <td><a href="<c:out value="donationEdit?id=${donation.id}"/>">Edit</a>
+                    <a href="<c:out value="donationDelete?id=${donation.id}"/>">Delete</a>
                 </td>
             </tr>
         </c:forEach>
